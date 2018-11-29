@@ -12,3 +12,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.app {
+  background: aqua;
+}
+
+.header {
+  background: brown;
+}
+
+.order {
+  background: darkgray;
+}
+
+.inventory {
+  background: green;
+}
+
+.adminPanel {
+  background: tan;
+}
