@@ -30,5 +30,6 @@ code {
 }
 
 .adminPanel {
-  background: tan;
+  background: #000;
+  padding: 10px;
 }

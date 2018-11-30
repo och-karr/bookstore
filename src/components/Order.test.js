@@ -14,8 +14,13 @@ describe('Order tests', () => { //zbiera wiele metod it
         ReactDOM.unmountComponentAtNode(div);
     })
 
-    it('Order renders', () => {
+    // it('Order renders', () => {
+    //     const wrapper = shallow(<Order />);
+    //     expect(wrapper.find('div').text()).toBe('Order');
+    // })
+
+    it('Snapshot matches', () => {
         const wrapper = shallow(<Order />);
-        expect(wrapper.find('div').text()).toBe('Order');
+        expect(wrapper).toMatchSnapshot();
     })
 })
