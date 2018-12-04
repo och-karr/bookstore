@@ -11,8 +11,7 @@ class AdminPanel extends React.Component {
                 description: "",
                 onStock: true,
                 image: ""
-            },
-            books: []
+            }
         };
 
         // this.changeName = this.changeName.bind(this);
@@ -44,14 +43,12 @@ class AdminPanel extends React.Component {
 
         event.preventDefault();
 
-        let newBooks = [...this.state.books]; //dzieli tablice na pojedyncze ksiazki i tworzy kopie
+        let newBook = {...this.state.book}; //rozbija książkę na pojedyncze properties
 
-        let newBook = {...this.state.book} //rozbija książkę na pojedyncze properties
-
-        newBooks.push(newBook);
+        this.props.addBook(newBook); //wywolanie odbędzie się w komponencie App
 
         this.setState({
-            books: newBooks,
+
             book: {
                 name: "",
                 author: "",
