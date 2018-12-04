@@ -1,5 +1,4 @@
 import React from 'react'; //React - nazwa importowanego obiektu z pakietu 'react'
-import AdminPanel from './AdminPanel';
 import Order from './Order';
 import Header from './Header';
 import Inventory from './Inventory';
@@ -11,21 +10,21 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            books: [],
+            // books: [],
             order: []
         }
     }
 
-    addNewBook = (book) => {
+    // addNewBook = (book) => {
 
-        let newBooks = [...this.state.books]; //kopia listy książek
+    //     let newBooks = [...this.state.books]; //kopia listy książek
 
-        newBooks.push(book); //to co dostaliśmy jako argument przesyłamy do nowej listy książek
+    //     newBooks.push(book); //to co dostaliśmy jako argument przesyłamy do nowej listy książek
 
-        this.setState({
-            books: newBooks
-        });
-    }
+    //     this.setState({
+    //         books: newBooks
+    //     });
+    // }
 
     addToOrder = (book) => {
         //pobieramy starą listę zamówień, kopiujemy i dodajemy nową książkę
@@ -47,7 +46,6 @@ class App extends React.Component {
                 <div className="row">
                     <Order order={this.state.order} removeFromOrder={this.removeFromOrder} />
                     <Inventory books={this.state.books} addToOrder={this.addToOrder} />
-                    <AdminPanel books={this.state.books} addBook={this.addNewBook} />
                 </div>
             </div>
         )

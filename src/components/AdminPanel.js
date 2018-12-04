@@ -45,7 +45,7 @@ class AdminPanel extends React.Component {
 
         let newBook = {...this.state.book}; //rozbija książkę na pojedyncze properties
 
-        this.props.addBook(newBook); //wywolanie odbędzie się w komponencie App
+        // this.props.addBook(newBook); //wywolanie odbędzie się w komponencie App
 
         this.setState({
 
