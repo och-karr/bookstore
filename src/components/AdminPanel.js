@@ -1,10 +1,12 @@
 import React from 'react';
+import {fbase} from '../fbase';
 
 class AdminPanel extends React.Component {
 
     constructor() {
         super();
         this.state = {
+            books: [],
             book: {
                 name: "",
                 author: "",
@@ -48,7 +50,7 @@ class AdminPanel extends React.Component {
         // this.props.addBook(newBook); //wywolanie odbędzie się w komponencie App
 
         this.setState({
-
+            books: [...this.state.books, newBook],
             book: {
                 name: "",
                 author: "",
@@ -57,6 +59,17 @@ class AdminPanel extends React.Component {
                 image: ""
             }
         });
+    }
+
+    componentDidMount() {
+        this.ref = fbase.syncState('bookstore/books', {
+            context: this,
+            state: 'books'
+        })
+    }
+
+    componentWillUnmount() {
+        fbase.removeBinding(this.ref);
     }
 
     render() {
